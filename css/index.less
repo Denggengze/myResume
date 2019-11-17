@@ -1,0 +1,382 @@
+@import './reset.min.less';
+@import './swiper.min.less';
+@import (reference) './common.less';
+
+@keyframes heartBeat {
+    0% {
+        -webkit-transform: scale(1);
+        transform        : scale(1)
+    }
+
+    14% {
+        -webkit-transform: scale(1.3);
+        transform        : scale(1.3)
+    }
+
+    28% {
+        -webkit-transform: scale(1);
+        transform        : scale(1)
+    }
+
+    42% {
+        -webkit-transform: scale(1.3);
+        transform        : scale(1.3)
+    }
+
+    70% {
+        -webkit-transform: scale(1);
+        transform        : scale(1)
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceInLeft {
+
+    0%,
+    60%,
+    75%,
+    90%,
+    to {
+        -webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+        animation-timing-function        : cubic-bezier(.215, .61, .355, 1)
+    }
+
+    0% {
+        opacity          : 0;
+        -webkit-transform: translate3d(-3000px, 0, 0);
+        transform        : translate3d(-3000px, 0, 0)
+    }
+
+    60% {
+        opacity          : 1;
+        -webkit-transform: translate3d(25px, 0, 0);
+        transform        : translate3d(25px, 0, 0)
+    }
+
+    75% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform        : translate3d(-10px, 0, 0)
+    }
+
+    90% {
+        -webkit-transform: translate3d(5px, 0, 0);
+        transform        : translate3d(5px, 0, 0)
+    }
+
+    to {
+        -webkit-transform: translateZ(0);
+        transform        : translateZ(0);
+        opacity          : 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity          : 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform        : translate3d(-100%, 0, 0)
+    }
+
+    to {
+        opacity          : 1;
+        -webkit-transform: translateZ(0);
+        transform        : translateZ(0);
+        opacity          : 1;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity          : 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform        : translate3d(100%, 0, 0)
+    }
+
+    to {
+        opacity          : 1;
+        -webkit-transform: translateZ(0);
+        transform        : translateZ(0);
+        opacity          : 1;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity          : 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform        : translate3d(0, -100%, 0)
+    }
+
+    to {
+        opacity          : 1;
+        -webkit-transform: translateZ(0);
+        transform        : translateZ(0);
+        opacity          : 1;
+    }
+}
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0)
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+	}
+}
+@keyframes musicMove{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/* 基础样式 */
+html {
+    font-size: 100px;
+}
+
+html,
+body {
+    height    : 100%;
+    overflow  : hidden;
+    background: #e4e4e4;
+
+    .container {
+        margin   : 0 auto;
+        max-width: 750px;
+        height   : 100%;
+
+    }
+
+    .swiperBox {
+        height: 100%;
+    }
+}
+
+/* 滑屏区域 */
+.swiperBox {
+    a {
+        display            : inline-block;
+        width              : .24rem;
+        height             : .18rem;
+        background-image: url(../images/下载.png);
+        // background         : red;
+        .CENTER-X(.24);
+        bottom : 5%;
+        z-index: 2;
+
+        animation:fadeInUp 1s infinite both ;
+    }
+
+    .swiper-container,
+    .swiper-slide {
+        height  : 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .page1 {
+        background: url(../images/78021fc1-faef-4f07-b203-3867e7385332-6420.webp) no-repeat center center;
+
+        .context {
+            width : 5rem;
+            height: 10rem;
+            .CENTER(5, 10);
+
+            .contextImg {
+                .CONTEXT-IMG();
+            }
+
+            .borderImg {
+                .BORDER-IMG();
+            }
+
+
+            .borderBox {
+                position: relative;
+                width   : 5rem;
+                height  : 10rem;
+
+                .resume {
+                    position: absolute;
+                    top     : 2.1rem;
+                    left    : 1rem;
+                    width   : 3rem;
+                    height  : 3rem;
+                    opacity : 0;
+                }
+
+                .myPicture {
+                    opacity: 0;
+                    width  : 1rem;
+                    height : 1rem;
+                    .CENTER(1, 1);
+                    top                  : 57%;
+                    background-image     : url(../images/1寸白底.jpg);
+                    border               : .05rem solid lightblue;
+                    border-radius        : 50%;
+                    background-position-x: center;
+                    background-size      : contain;
+                    background-repeat    : no-repeat;
+                }
+
+                .infoBox {
+                    position: absolute;
+                    top     : 6.5rem;
+                    width   : 2rem;
+                    height  : 2rem;
+                    .CENTER-X(2);
+                    font-size : .17rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    #page1 {
+        .contextImg {
+            animation: fadeInLeft 1s both;
+        }
+
+        .borderImg {
+            animation: fadeInRight 1s both;
+        }
+
+        .resume {
+            animation: heartBeat 1s ease 1s both;
+        }
+
+        .myPicture {
+            animation: fadeInLeft 1s ease 1.5s both;
+        }
+
+        .infoBox {
+            animation: fadeInRight 1s ease 2s both;
+        }
+    }
+
+    .page2 {
+        background : url(../images/78021fc1-faef-4f07-b203-3867e7385332-6420.webp) no-repeat center center;
+        perspective: 2000px;
+
+        .contextImg {
+            .CONTEXT-IMG();
+        }
+
+        .borderImg {
+            .BORDER-IMG();
+        }
+
+        .myDesc {
+            position: absolute;
+            width   : 2.5rem;
+            height  : .8rem;
+            left    : 6%;
+            top     : 16%;
+            .CENTER-X(2.5);
+            background-image : url(../images/ba1e7a1c-7e05-481a-98ef-323f3f66abbc-0593.webp);
+            background-repeat: no-repeat;
+            background-size  : contain;
+            opacity          : 0;
+
+            .number {
+                display          : inline-block;
+                width            : .5rem;
+                height           : .5rem;
+                position         : absolute;
+                top              : 15%;
+                left             : 5%;
+                background-image : url(../images/ea4bb0fc-5ac5-4f38-8b61-6595ff27ef08-4831);
+                background-repeat: no-repeat;
+                background-size  : contain;
+                color            : #fff;
+                font-size        : .3rem;
+                text-align       : center;
+                line-height      : .5rem;
+            }
+
+            .title {
+                display    : inline-block;
+                width      : 2rem;
+                height     : .5rem;
+                font-size  : .3rem;
+                text-align : center;
+                line-height: .5rem;
+                margin-left: .4rem;
+            }
+        }
+
+        .baseInfo {
+            box-sizing     : border-box;
+            width          : 3rem;
+            height         : 5rem;
+            transform-style: preserve-3d;
+            .CENTER(3, 5);
+            margin-top: -1.5rem;
+
+
+            dd {
+                box-sizing      : border-box;
+                height          : .5rem;
+                line-height     : .5rem;
+                border-top      : .02rem dashed rgba(255, 255, 255, .3);
+                background-image: linear-gradient(to bottom right, lightblue, lightyellow);
+                text-overflow   : ellipsis;
+                white-space     : nowrap;
+                overflow        : hidden;
+                font-size       : .2rem;
+
+                p {
+                    position: relative;
+                    z-index : 999;
+                }
+            }
+
+        }
+    }
+
+    #page2 {
+        .contextImg {
+            animation: fadeInLeft 1s both;
+        }
+
+        .borderImg {
+            animation: fadeInRight 1s both;
+        }
+
+        .myDesc {
+            animation: fadeInDown 1s .5s both;
+        }
+    }
+}
+
+/* 音乐区域 */
+.musicBox{
+    .musicAudio{
+        display: none;
+    }
+
+    .musicIcon{
+        display: none;
+        position: absolute;
+        top:.2rem;
+        left:.2rem;
+        z-index: 999;
+        width: .6rem;
+        height: .6rem;
+        background: url(../images/music.png) no-repeat center center;
+
+        &.move{
+            animation: musicMove 1s linear infinite;
+        }
+    }
+}

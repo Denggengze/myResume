@@ -1,0 +1,30 @@
+.CENTER(@W,@H){
+    position: absolute;
+    top: 50%;
+    left:50%;
+    margin: unit(-@H/2,rem) 0 0 unit(-@W/2,rem);
+}
+
+.CENTER-X(@W){
+    position: absolute;
+    left: 50%;
+    margin-left:unit(-@W/2,rem);
+}
+
+.CENTER-Y(@H){
+    position: absolute;
+    top: 50%;
+    margin-top:unit(-@H/2,rem);
+}
+
+.CONTEXT-IMG {
+    width : 4.2rem;
+    height: 6.86rem;
+    .CENTER(4.2, 6.86);
+}
+
+.BORDER-IMG {
+    width : 3.2rem;
+    height: 5.87rem;
+    .CENTER(3.2, 5.74);
+}
